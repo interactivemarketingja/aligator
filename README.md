@@ -31,3 +31,18 @@ Then open <http://localhost:4173>.
 
 - `index.html`: Auth/config page
 - `feed.html`: Main social feed area shown after successful sign-up or login
+
+## Push to GitHub
+
+If your local repo does not yet have a remote configured, add one and push:
+
+```bash
+git remote add origin <your-github-repo-url>
+git push -u origin work
+```
+
+If a remote is already configured, just run:
+
+```bash
+git push
+```
