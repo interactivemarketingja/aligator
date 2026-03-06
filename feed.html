@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Feed | Social Platform</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card stack feed-layout">
+        <header class="feed-header">
+          <div>
+            <h1>Main Feed</h1>
+            <p class="subtitle">Welcome to your social media home area.</p>
+          </div>
+          <button id="logout" type="button" class="secondary">Log Out</button>
+        </header>
+
+        <section class="session stack" aria-live="polite">
+          <h2>Signed-in Account</h2>
+          <pre id="session-state">Loading...</pre>
+        </section>
+
+        <section class="feed-grid">
+          <article class="post-card">
+            <h3>#welcome</h3>
+            <p>You're signed in. This is your starting feed area after login/sign-up.</p>
+          </article>
+          <article class="post-card">
+            <h3>#next-steps</h3>
+            <p>Connect this page to Appwrite Databases or Messaging to render real posts.</p>
+          </article>
+          <article class="post-card">
+            <h3>#profile</h3>
+            <p>Add profile editing, follow graph, and reactions to build a full social app.</p>
+          </article>
+        </section>
+
+        <p id="status" class="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script type="module" src="feed.js"></script>
+  </body>
+</html>
