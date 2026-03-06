@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appwrite Auth | Login / Sign Up</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1>Welcome</h1>
+        <p class="subtitle">Authenticate using your Appwrite project.</p>
+
+        <form id="config-form" class="stack">
+          <h2>Appwrite Configuration</h2>
+          <label>
+            Endpoint
+            <input id="endpoint" type="url" placeholder="https://cloud.appwrite.io/v1" required />
+          </label>
+          <label>
+            Project ID
+            <input id="project-id" type="text" placeholder="your-project-id" required />
+          </label>
+          <button type="submit">Initialize Appwrite</button>
+          <p class="hint">Configuration is stored in localStorage for convenience.</p>
+        </form>
+
+        <div class="tabs" role="tablist" aria-label="Authentication forms">
+          <button id="tab-login" class="tab active" type="button">Login</button>
+          <button id="tab-signup" class="tab" type="button">Sign Up</button>
+        </div>
+
+        <form id="login-form" class="auth-form stack" novalidate>
+          <label>
+            Email
+            <input id="login-email" type="email" required />
+          </label>
+          <label>
+            Password
+            <input id="login-password" type="password" minlength="8" required />
+          </label>
+          <button type="submit">Log In</button>
+        </form>
+
+        <form id="signup-form" class="auth-form stack hidden" novalidate>
+          <label>
+            Name
+            <input id="signup-name" type="text" minlength="2" required />
+          </label>
+          <label>
+            Email
+            <input id="signup-email" type="email" required />
+          </label>
+          <label>
+            Password
+            <input id="signup-password" type="password" minlength="8" required />
+          </label>
+          <button type="submit">Create Account</button>
+        </form>
+
+        <section class="session stack" aria-live="polite">
+          <h2>Session</h2>
+          <pre id="session-state">Not initialized.</pre>
+          <div class="actions">
+            <button id="refresh-session" type="button">Refresh Session</button>
+            <button id="logout" type="button" class="secondary">Log Out</button>
+          </div>
+        </section>
+
+        <p id="status" class="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
